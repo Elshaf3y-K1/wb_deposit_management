@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="email_template_transaction_done" model="mail.template">
+        <field name="name">Transaction Confirmation</field>
+        <field name="email_from">${object.bank_id.partner_id.email or 'noreply@example.com'}</field>
+        <field name="email_to">${object.name.email}</field>
+        <field name="subject">Transaction Confirmation - ${object.bank_id.name}</field>
+        <field name="model_id" ref="model_wb_bank_transactions"/>
+        <field name="body_html">
+            <div>
+                <p>Dear ${object.name.name},</p>
+                <p>Your transaction has been processed:</p>
+                <ul>
+                    <li>Type: ${object.tran_state}</li>
+                    <li>Amount: ${object.balance}</li>
+                    <li>Commission: ${object.commission_amount}</li>
+                    <li>Total: ${object.total_amount}</li>
+                    <li>Date: ${object.create_date}</li>
+                </ul>
+                <p>Current Balance: ${object.name.balance}</p>
+                <p>Thank you for banking with us.</p>
+            </div>
+        </field>
+    </record>
+</odoo>

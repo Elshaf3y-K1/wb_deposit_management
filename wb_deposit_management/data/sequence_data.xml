@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_wb_bank" model="ir.sequence">
+        <field name="name">Bank Sequence</field>
+        <field name="code">wb.bank</field>
+        <field name="prefix">BNK</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

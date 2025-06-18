@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="wb_res_partner_form_view">
+        <field name="name">wb_res.partner.form_view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Bank Details">
+                    <group>
+                        <group>
+                            <field name="wb_bank_id" />
+                            <field name="balance" />
+                            <field name="daily_withdrawal_limit" />
+                        </group>
+                        <group>
+                            <field name="loyalty_points" />
+                            <field name="loyalty_level" />
+                        </group>
+                    </group>
+                    <group>
+                        <button name="redirect_to_transaction"
+                                type="object"
+                                class="oe_highlight"
+                                string="Transaction History"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

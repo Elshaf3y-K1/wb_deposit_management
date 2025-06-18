@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wb_bank_manager,wb_bank_manager,model_wb_bank,group_wb_bank_manager,1,1,1,1
+access_wb_bank_staff,wb_bank_staff,model_wb_bank,group_wb_bank_staff,1,1,0,0
+access_wb_transactions_manager,wb_transactions_manager,model_wb_bank_transactions,group_wb_bank_manager,1,1,1,1
+access_wb_transactions_staff,wb_transactions_staff,model_wb_bank_transactions,group_wb_bank_staff,1,1,1,0
+access_wb_branch_manager,wb_branch_manager,model_wb_branch,group_wb_bank_manager,1,1,1,1
+access_wb_branch_staff,wb_branch_staff,model_wb_branch,group_wb_bank_staff,1,1,0,0
+access_wb_recurring,wb_recurring,model_wb_recurring_transaction,group_wb_bank_manager,1,1,1,1

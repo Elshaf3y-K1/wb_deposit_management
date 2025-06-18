@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bank_dashboard" model="ir.ui.view">
+        <field name="name">Bank Dashboard</field>
+        <field name="model">wb.bank</field>
+        <field name="arch" type="xml">
+            <dashboard>
+                <view type="pie" icon="fa-money">
+                    <field name="transaction_ids" string="Transactions by Type">
+                        <groupby name="tran_state"/>
+                    </field>
+                </view>
+
+                <view type="bar" icon="fa-line-chart">
+                    <field name="transaction_ids" string="Transactions by Month">
+                        <groupby name="create_date:month"/>
+                    </field>
+                </view>
+
+                <group>
+                    <div class="o_dashboard_row">
+                        <div class="o_dashboard_col">
+                            <field name="balance" widget="monetary" string="Current Balance"/>
+                        </div>
+                        <div class="o_dashboard_col">
+                            <field name="commission_total" widget="monetary" string="Total Commission"/>
+                        </div>
+                        <div class="o_dashboard_col">
+                            <field name="transaction_count" string="Transactions Count"/>
+                        </div>
+                    </div>
+                </group>
+            </dashboard>
+        </field>
+    </record>
+
+    <record id="action_bank_dashboard" model="ir.actions.act_window">
+        <field name="name">Bank Dashboard</field>
+        <field name="res_model">wb.bank</field>
+        <field name="view_mode">dashboard</field>
+        <field name="view_id" ref="view_bank_dashboard"/>
+    </record>
+
+    <menuitem id="menu_bank_dashboard"
+        name="Bank Dashboard"
+        parent="menu_bank_root"
+        action="action_bank_dashboard"
+        sequence="1"/>
+</odoo>

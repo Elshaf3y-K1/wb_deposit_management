@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wb_bank_manager_group" model="res.groups">
+        <field name="name">Bank Manager</field>
+    </record>
+
+    <record id="wb_bank_staff_group" model="res.groups">
+        <field name="name">Bank Staff</field>
+    </record>
+</odoo>

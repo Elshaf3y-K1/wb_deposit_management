@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wb_bank_transactions_tree_view" model="ir.ui.view">
+        <field name="name">wb.bank.transactions.tree</field>
+        <field name="model">wb.bank.transactions</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="bank_id"/>
+                <field name="branch_id"/>
+                <field name="tran_state"/>
+                <field name="balance"/>
+                <field name="commission_amount"/>
+                <field name="total_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_report_bank_transaction_slip" model="ir.actions.report">
+        <field name="name">Bank Transaction Report</field>
+        <field name="model">wb.bank.transactions</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">wb_deposit_management.wb_bank_transaction_receipt_report</field>
+        <field name="binding_model_id" ref="model_wb_bank_transactions" />
+    </record>
+
+    <record id="action_report_bank_transaction_excel" model="ir.actions.report">
+        <field name="name">Bank Transaction Report (Excel)</field>
+        <field name="model">wb.bank.transactions</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">wb_deposit_management.bank_transaction_excel</field>
+        <field name="binding_model_id" ref="model_wb_bank_transactions" />
+    </record>
+</odoo>
